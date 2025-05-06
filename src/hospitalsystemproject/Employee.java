@@ -33,5 +33,24 @@ public class Employee implements Comparable<Employee> {
     public String toCsv() {
         return String.join(",", name, employeeId, department != null ? department.getName() : "No Dept", gender, getClass().getSimpleName());
     }
+     @Override
+    public int compareTo(Employee other) {
+        return name.compareToIgnoreCase(other.name);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return (o instanceof Employee e) && employeeId.equals(e.employeeId);
+    }
+
+    @Override
+    public int hashCode() {
+        return employeeId.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return name + " (" + employeeId + ", " + gender + ") - " + (department != null ? department.getName() : "No Dept");
+    }
 
 }
