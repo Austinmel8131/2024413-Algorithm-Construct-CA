@@ -54,4 +54,57 @@ public class HospitalSystem {
             return values()[input - 1];
         }
     }
+    public HospitalSystem() {
+        initializeDepartments();
+    }
+
+    private void initializeDepartments() {
+        for (DepartmentType type : DepartmentType.values()) {
+            departmentMap.put(type, new Department(type.getDisplayName()));
+        }
+    }
+
+    public void addEmployee(Employee employee) {
+        employees.add(employee);
+    }
+
+    public List<Employee> searchEmployees(String name) {
+        List<Employee> results = new ArrayList<>();
+        for (Employee emp : employees) {
+            if (emp.getName().equalsIgnoreCase(name)) {
+                results.add(emp);
+            }
+        }
+        return results;
+    }
+
+    public void sortEmployees() {
+        employees.recursiveBubbleSort(employees.size());
+    }
+
+    public void generateRandomEmployees(int count) {
+        String[] firstNames = {"John", "Jane", "Michael", "Emily", "David", "Sarah"};
+        String[] lastNames = {"Smith", "Johnson", "Williams", "Brown", "Jones", "Miller"};
+        String[] genders = {"Male", "Female", "Other"};
+
+        for (int i = 0; i < count; i++) {
+            String name = firstNames[random.nextInt(firstNames.length)] + " " + lastNames[random.nextInt(lastNames.length)];
+            String empId = "EMP" + (1000 + employees.size());
+            String gender = genders[random.nextInt(genders.length)];
+            DepartmentType deptType = DepartmentType.values()[random.nextInt(DepartmentType.values().length)];
+            Department dept = departmentMap.get(deptType);
+
+            if (random.nextBoolean()) {
+                ManagerType type = ManagerType.values()[random.nextInt(ManagerType.values().length)];
+                Manager manager = new Manager(name, empId, dept, gender, Manager.ManagerType.valueOf(type.name()));
+                dept.setManager(manager);
+                employees.add(manager);
+            } else {
+                Employee emp = new Employee(name, empId, dept, gender);
+                employees.add(emp);
+            }
+        }
+        System.out.println(count + " random employees generated:");
+        employees.stream().skip(employees.size() - count).forEach(System.out::println);
+    }
 }
