@@ -23,12 +23,6 @@ public class BubbleSort<ElemType> extends ArrayList<ElemType> {
         set(j, temp);
     }
 }
-         // TASK1: write your code here
-
-         // Create two objects that will store the info from the two positions
-         // Remove element from position 1
-         // Insert objPos2 into position 1
-         // Remove element from position 2
-         // Insert objPos1 into position 2
+         
 
 
