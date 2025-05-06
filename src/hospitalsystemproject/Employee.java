@@ -30,4 +30,8 @@ public class Employee implements Comparable<Employee> {
         this.department = department;
         if (department != null) department.addEmployee(this);
     }
+    public String toCsv() {
+        return String.join(",", name, employeeId, department != null ? department.getName() : "No Dept", gender, getClass().getSimpleName());
+    }
+
 }
