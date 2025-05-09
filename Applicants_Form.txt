@@ -1,0 +1,42 @@
+Name,ID,Department,Gender,Role,EmploymentType
+james,emp232,Radiology Department,Male,Head Nurse,PERMANENT
+Jane Brown,EMP1001,Radiology Department,Other,Department Administrator,CONTRACT
+Michael Brown,EMP1002,Pediatrics Department,Male,Employee,PERMANENT
+John Johnson,EMP1003,Cardiology Department,Other,Department Administrator,PERMANENT
+Sarah Miller,EMP1004,Pediatrics Department,Male,Employee,CONTRACT
+Michael Jones,EMP1005,Pediatrics Department,Other,Employee,CONTRACT
+Michael Brown,EMP1006,Cardiology Department,Female,Employee,CONTRACT
+John Smith,EMP1007,Pediatrics Department,Male,Employee,PERMANENT
+Jane Brown,EMP1008,Surgery Department,Male,Department Administrator,CONTRACT
+Michael Smith,EMP1009,Pediatrics Department,Other,Employee,PERMANENT
+John Miller,EMP1010,Pediatrics Department,Male,Employee,PERMANENT
+David Jones,EMP1011,Surgery Department,Other,Employee,CONTRACT
+Jane Johnson,EMP1012,Cardiology Department,Male,Employee,CONTRACT
+Emily Jones,EMP1013,Cardiology Department,Other,Department Administrator,PERMANENT
+David Johnson,EMP1014,Surgery Department,Female,Department Administrator,PERMANENT
+Emily Miller,EMP1015,Emergency Department,Other,Chief Physician,PERMANENT
+Sarah Williams,EMP1016,Emergency Department,Other,Department Administrator,CONTRACT
+Michael Brown,EMP1017,Emergency Department,Other,Employee,CONTRACT
+Sarah Smith,EMP1018,Emergency Department,Male,Head Nurse,PERMANENT
+Emily Brown,EMP1019,Surgery Department,Male,Chief Physician,PERMANENT
+Sarah Johnson,EMP1020,Surgery Department,Other,Chief Physician,CONTRACT
+Sarah Brown,EMP1021,Radiology Department,Other,Employee,PERMANENT
+Jane Jones,EMP1022,Radiology Department,Other,Employee,PERMANENT
+Sarah Williams,EMP1023,Cardiology Department,Female,Employee,CONTRACT
+Michael Jones,EMP1024,Surgery Department,Male,Department Administrator,CONTRACT
+John Johnson,EMP1025,Emergency Department,Other,Employee,PERMANENT
+Sarah Brown,EMP1026,Cardiology Department,Other,Employee,CONTRACT
+Emily Brown,EMP1027,Pediatrics Department,Female,Department Administrator,PERMANENT
+Sarah Brown,EMP1028,Radiology Department,Other,Department Administrator,CONTRACT
+Michael Johnson,EMP1029,Pediatrics Department,Female,Employee,CONTRACT
+Sarah Brown,EMP1030,Radiology Department,Male,Employee,CONTRACT
+David Jones,EMP1031,Pediatrics Department,Female,Head Nurse,CONTRACT
+Michael Brown,EMP1032,Surgery Department,Male,Head Nurse,PERMANENT
+Emily Brown,EMP1033,Cardiology Department,Female,Employee,PERMANENT
+Jane Miller,EMP1034,Cardiology Department,Other,Employee,CONTRACT
+David Williams,EMP1035,Pediatrics Department,Other,Employee,CONTRACT
+Jane Williams,EMP1036,Cardiology Department,Male,Employee,CONTRACT
+Jane Johnson,EMP1037,Radiology Department,Male,Department Administrator,PERMANENT
+John Brown,EMP1038,Surgery Department,Female,Department Administrator,CONTRACT
+Emily Miller,EMP1039,Surgery Department,Male,Employee,CONTRACT
+Michael Jones,EMP1040,Radiology Department,Male,Department Administrator,PERMANENT

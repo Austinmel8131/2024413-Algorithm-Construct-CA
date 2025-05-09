@@ -9,15 +9,14 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- *
  * @author macbook
  */
 public class Utils {// Method to write users to a CSV file
-    public static void writeToCSV(List<Employee> employees, String filename) {
+    public static void writeToTXT(List<Employee> employees, String filename) {
         try (FileWriter writer = new FileWriter(filename)) {
-            writer.write("Name,ID,Department,Gender,Role\n");
+            writer.write("Name,ID,Department,Gender,Role,EmploymentType\n");
             for (Employee e : employees) {
-                writer.write(e.toCsv() + "\n");
+                writer.write(e.toTxt() + "\n");
             }
             System.out.println("Saved to " + filename);
         } catch (IOException e) {

@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package hospitalsystemproject;
-
 /**
  * @author macbook
  */
@@ -41,7 +40,10 @@ public class HospitalSystem {
             return values()[input - 1];
         }
     }
-
+    public enum EmploymentType {
+        PERMANENT,
+        CONTRACT
+    }
     public enum ManagerType {
         CHIEF_PHYSICIAN("Chief Physician"),
         HEAD_NURSE("Head Nurse"),
@@ -93,15 +95,18 @@ public class HospitalSystem {
             String gender = genders[random.nextInt(genders.length)];
             DepartmentType deptType = DepartmentType.values()[random.nextInt(DepartmentType.values().length)];
             Department dept = departmentMap.get(deptType);
+            EmploymentType empType = random.nextBoolean() ? EmploymentType.PERMANENT : EmploymentType.CONTRACT;
 
             if (random.nextBoolean()) {
-                ManagerType type = ManagerType.values()[random.nextInt(ManagerType.values().length)];
-                Manager manager = new Manager(name, empId, dept, gender, Manager.ManagerType.valueOf(type.name()));
+                Manager.ManagerType type = Manager.ManagerType.values()[random.nextInt(Manager.ManagerType.values().length)];
+                Manager manager = new Manager(name, empId, dept, gender, type, empType);
                 dept.setManager(manager);
                 employees.add(manager);
+                System.out.println("Added: " + manager.toString());
             } else {
-                Employee emp = new Employee(name, empId, dept, gender);
+                Employee emp = new Employee(name, empId, dept, gender, empType);
                 employees.add(emp);
+                System.out.println("Added: " + emp.toString());
             }
         }
         System.out.println(count + " random employees generated:");
@@ -156,6 +161,10 @@ public class HospitalSystem {
                     String empId = scanner.nextLine();
                     System.out.print("Enter gender (Male/Female/Other): ");
                     String gender = scanner.nextLine();
+                    
+                    System.out.print("Enter employment type (1. Permanent, 2. Contract): ");
+                    int empTypeInput = Integer.parseInt(scanner.nextLine());
+                    EmploymentType empType = (empTypeInput == 1) ? EmploymentType.PERMANENT : EmploymentType.CONTRACT;
 
                     System.out.println("Select Manager Type:");
                     for (int i = 0; i < ManagerType.values().length; i++) {
@@ -187,27 +196,21 @@ public class HospitalSystem {
                     DepartmentType deptType = DepartmentType.fromInt(deptChoice);
                     Department dept = hospitalSystem.departmentMap.get(deptType);
 
-                    Manager manager = new Manager(newName, empId, dept, gender, mgrType);
+                    Manager manager = new Manager(newName, empId, dept, gender, mgrType, empType);
                     hospitalSystem.addEmployee(manager);
                     dept.setManager(manager);
                     System.out.println(newName + " has been added as " + mgrType + " to " + dept.getName());
                     break;
-                case GENERATE_RANDOM:
+                    case GENERATE_RANDOM:
                     System.out.print("How many random employees? ");
-                    int count;
-                    try {
-                        count = Integer.parseInt(scanner.nextLine());
-                        if (count < 1) throw new Exception();
-                    } catch (Exception e) {
-                        System.out.println("Invalid number.");
-                        continue;
-                    }
+                    int count = Integer.parseInt(scanner.nextLine());
                     hospitalSystem.generateRandomEmployees(count);
-                    Utils.writeToCSV(hospitalSystem.employees, "file.csv");
+                    Utils.writeToTXT(hospitalSystem.employees, "Applicants_Form.txt");
                     break;
                 case EXIT:
                     System.out.println("Exiting application.");
                     return;
+//               
             }
 
         }

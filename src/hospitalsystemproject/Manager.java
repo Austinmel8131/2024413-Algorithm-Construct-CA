@@ -23,17 +23,17 @@ public class Manager extends Employee {
 
     private ManagerType managerType;
 
-    public Manager(String name, String employeeId, Department department, String gender, ManagerType managerType) {
-        super(name, employeeId, department, gender);
+    public Manager(String name, String employeeId, Department department, String gender, ManagerType managerType, HospitalSystem.EmploymentType employmentType) {
+        super(name, employeeId, department, gender, employmentType);
         this.managerType = managerType;
     }
 
     public ManagerType getManagerType() { return managerType; }
     public void setManagerType(ManagerType managerType) { this.managerType = managerType; }
 
-    @Override
-    public String toCsv() {
-        return super.toCsv().replace(getClass().getSimpleName(), managerType.toString());
+   @Override
+    public String toTxt() {
+        return super.toTxt().replace(getClass().getSimpleName(), managerType.toString());
     }
 
     @Override
