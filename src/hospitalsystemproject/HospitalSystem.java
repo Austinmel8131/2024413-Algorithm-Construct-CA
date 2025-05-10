@@ -163,7 +163,7 @@ public class HospitalSystem {
                     String newName = scanner.nextLine();
                     System.out.print("Enter employee ID: ");
                     String empId = scanner.nextLine();
-                    System.out.print("Enter gender (Male/Female/Other): ");
+                    System.out.print("Enter gender (Male/Female/Other): "); // prompt the users to enter the gender type
                     String gender = scanner.nextLine();
                     
                     System.out.print("Enter employment type (1. Permanent, 2. Contract): "); // prompt users to select employment type
