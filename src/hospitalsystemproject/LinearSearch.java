@@ -4,32 +4,33 @@
  */
 package hospitalsystemproject;
 
-import java.util.*;
-import java.util.ArrayList;
+
+import java.util.ArrayList; // responsible for importing ArrayList
 /**
  *
  * @author macbook
  */
-public class LinearSearch<ElemType> extends ArrayList<ElemType> {
+// manages the searching using linear search or binary search
+public class LinearSearch<ElemType> extends ArrayList<ElemType> { 
 
-     public int binarySearch(ElemType key, int low, int high) {
-        if (high < low) return -1;
+     public int binarySearch(ElemType key, int low, int high) { //Method for recursive Binary search
+        if (high < low) return -1; // 
         
-        int mid = (low + high) / 2;
-        int comparison = ((Comparable)get(mid)).compareTo(key);
+        int mid = (low + high) / 2; // calculate the index
+        int comparison = ((Comparable)get(mid)).compareTo(key); // this compares the word entered with the list of record
         
-        if (comparison == 0) return mid;
-        else if (comparison > 0) return binarySearch(key, low, mid-1);
-        else return binarySearch(key, mid+1, high);
+        if (comparison == 0) return mid; // finds the match of the word entered if found
+        else if (comparison > 0) return binarySearch(key, low, mid-1); // search the remaining left list of record
+        else return binarySearch(key, mid+1, high);// dearch the remaing list of data on the right
     }
     
-    public ArrayList<ElemType> linearSearch(ElemType key) {
-        ArrayList<ElemType> results = new ArrayList<>();
-        for (ElemType elem : this) {
-            if (((Comparable)elem).compareTo(key) == 0) {
-                results.add(elem);
+    public ArrayList<ElemType> linearSearch(ElemType key) { // Method for Linearch search
+        ArrayList<ElemType> results = new ArrayList<>(); // this arraylist olds the search march found
+        for (ElemType elem : this) { // repeats over all elements
+            if (((Comparable)elem).compareTo(key) == 0) { // check for the march
+                results.add(elem); // adds the match to the search results
             }
         }
-        return results;
+        return results; // returns every match found
     }
 }
